@@ -1,0 +1,23 @@
+{
+  "importOrder": [
+    "^@nestjs(/.*)?$",
+    "^react$",
+    "^next(/.*)?$",
+    "<THIRD_PARTY_MODULES>",
+    "^@YOUR_ORGANIZATION_NAME/(.*)$",
+    "^\\.\\.\\/.*(?<!\\.css|\\.sass|\\.less|\\.scss|\\.styl|\\.svg|\\.png|\\.jpg|\\.jpeg|\\.gif|\\.webp|\\.ico)$",
+    "^\\.\\/.*(?<!\\.css|\\.sass|\\.less|\\.scss|\\.styl|\\.svg|\\.png|\\.jpg|\\.jpeg|\\.gif|\\.webp|\\.ico)$",
+    "^\\.$",
+    "^.*\\.((c|sa|le|sc)ss|styl)$",
+    "^.*\\.(svg|png|jpg|jpeg|gif|webp|ico)$"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true,
+  "importOrderGroupNamespaceSpecifiers": true,
+  "printWidth": 120,
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "all",
+  "plugins": ["@trivago/prettier-plugin-sort-imports"]
+}

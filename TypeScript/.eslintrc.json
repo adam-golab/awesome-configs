@@ -1,0 +1,56 @@
+{
+  "extends": ["next/core-web-vitals", "plugin:@typescript-eslint/recommended"],
+  "rules": {
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always",
+        "pathGroups": [
+          {
+            "pattern": "@/**",
+            "group": "internal"
+          },
+          {
+            "pattern": "**/*.+(css|sass|less|scss|styl)",
+            "patternOptions": { "dot": true, "nocomment": true },
+            "group": "unknown",
+            "position": "after"
+          },
+          {
+            "pattern": "{.,..}/**/*.+(css|sass|less|scss|styl)",
+            "patternOptions": { "dot": true, "nocomment": true },
+            "group": "unknown",
+            "position": "after"
+          },
+          {
+            "pattern": "**/*.+(svg|png|jpg|jpeg|gif|webp|ico)",
+            "patternOptions": { "dot": true, "nocomment": true },
+            "group": "unknown",
+            "position": "after"
+          },
+          {
+            "pattern": "{.,..}/**/*.+(svg|png|jpg|jpeg|gif|webp|ico)",
+            "patternOptions": { "dot": true, "nocomment": true },
+            "group": "unknown",
+            "position": "after"
+          }
+        ],
+        "groups": [["builtin", "external"], ["internal", "parent"], ["sibling", "index", "unknown"], "type", "object"],
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ],
+    "import/no-restricted-paths": [
+      "error",
+      {
+        "zones": [
+          { "target": ["./src/client"], "from": ["./src/server", "./src/app"] },
+          { "target": ["./src/!(app)"], "from": ["./src/app"] }
+        ]
+      }
+    ],
+    "@typescript-eslint/explicit-module-boundary-types": "error"
+  }
+}
